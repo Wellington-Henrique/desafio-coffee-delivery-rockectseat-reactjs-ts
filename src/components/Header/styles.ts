@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
     padding: 2rem 10rem;
 
+    max-width: 1440px;
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: space-between;

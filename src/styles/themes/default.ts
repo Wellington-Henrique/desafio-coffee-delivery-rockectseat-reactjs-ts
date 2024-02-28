@@ -18,4 +18,17 @@ export const defaultTheme = {
 
   'background': '#FAFAFA',
   'white': '#FFF',
+
+  'title-font-family' : 'Baloo 2',
+  'text-font-family' : 'Roboto',
+
+  'title-xl-font-size' : '3rem',
+  'title-xl-font-line-height' : '1.3',
+  'title-xl-font-weight' : '900',
+
+  'text-l-font-size' : '1.25rem',
+  'text-l-font-line-height' : '1.3',
+
+  'text-m-font-size' : '1rem',
+  'text-m-font-line-height' : '1.3',
 }
