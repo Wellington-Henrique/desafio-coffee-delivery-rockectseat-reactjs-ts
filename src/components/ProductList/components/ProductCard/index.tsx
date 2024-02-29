@@ -1,26 +1,42 @@
-import { ProductCardContainer } from "./styles";
-
-import img from "../../../../assets/coffees/americano.png"
 import { Minus, Plus, ShoppingCart } from "phosphor-react";
 
-export function ProductCard() {
+import { ProductCardContainer } from "./styles";
+
+export interface Product {
+    id: string;
+    title: string;
+    description: string;
+    categories: Categories[];
+    price: number;
+    image: string;
+}
+
+interface Categories {
+    id: string,
+    description: string
+}
+
+interface ProductCardProps {
+    product: Product
+}
+
+export function ProductCard({ product }: ProductCardProps) {
     return (
         <ProductCardContainer>
-            <img src={img} alt="" />
+            <img src={product.image} alt="" />
 
             <div className="categories-carroussel">
-                <span className="category">TRADICIONAL</span>
-                <span className="category">COM LEITE</span>
+                {product.categories.map(category => <span key={category.id} className="category">{category.description}</span>)}
             </div>
 
-            <h3>Expresso Cremoso</h3>
+            <h3>{product.title}</h3>
 
-            <p>Café expresso tradicional com espuma cremosa</p>
+            <p>{product.description}</p>
 
             <div className="card-footer">
                 <div className="price-container">
                     <span>R$</span>
-                    <span className="price">{`9,90`}</span>
+                    <span className="price">{product.price.toFixed(2)}</span>
                 </div>
 
                 <span className="add-remove-container">
