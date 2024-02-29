@@ -7,27 +7,29 @@ export function Intro() {
     return (
         <IntroContainer>
             <div className="intro-content">
-                <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-                <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+                <div>
+                    <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+                    <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+                </div>
                 
                 <SloganContainer>
                     <div>
-                        <ShoppingCart className="cart-ico"/> 
+                        <ShoppingCart className="cart-ico" weight="fill"/> 
                         <span>Compra simples e segura</span>
                     </div>
 
                     <div>
-                        <Timer className="timer-ico"/> 
-                        <span>Entrega rápida e rastreada</span>
-                    </div>
-
-                    <div>
-                        <Package className="package-ico"/> 
+                        <Package className="package-ico" weight="fill"/> 
                         <span>Embalagem mantém o café intacto</span>
                     </div>
 
                     <div>
-                        <Coffee className="coffee-ico"/>
+                        <Timer className="timer-ico" weight="fill"/> 
+                        <span>Entrega rápida e rastreada</span>
+                    </div>
+
+                    <div>
+                        <Coffee className="coffee-ico" weight="fill"/>
                         <span>O café chega fresquinho até você</span>
                     </div>
                 </SloganContainer>

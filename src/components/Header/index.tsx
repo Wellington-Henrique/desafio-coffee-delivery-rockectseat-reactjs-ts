@@ -8,13 +8,14 @@ export function Header() {
     return(
         <HeaderContainer>
             <img src={logo} alt="" />
+            
             <div>
                 <span>
-                    <MapPin size={22}/>
+                    <MapPin size={22} weight="fill"/>
                     Itapetininga, SP
                 </span>
                 <button>
-                    <ShoppingCartSimple size={22}/>
+                    <ShoppingCartSimple size={22} weight="fill"/>
                 </button>
             </div>
         </HeaderContainer>
