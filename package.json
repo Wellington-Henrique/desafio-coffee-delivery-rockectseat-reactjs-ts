@@ -11,8 +11,6 @@
     "server": "json-server server.json --watch"
   },
   "dependencies": {
-    "@rocketseat/eslint-config": "^2.2.2",
-    "@types/styled-components": "^5.1.34",
     "phosphor-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -20,8 +18,10 @@
     "styled-components": "^6.1.8"
   },
   "devDependencies": {
+    "@rocketseat/eslint-config": "^2.2.2",
     "@types/react": "^18.2.56",
     "@types/react-dom": "^18.2.19",
+    "@types/styled-components": "^5.1.34",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react": "^4.2.1",
@@ -29,7 +29,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "json-server": "^1.0.0-alpha.23",
-    "npx": "^10.2.2",
     "typescript": "^5.2.2",
     "vite": "^5.1.4"
   }
