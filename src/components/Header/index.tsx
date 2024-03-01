@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom'
 export function Header() {
   return (
     <HeaderContainer>
-      <img src={logo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
 
       <div>
         <span>
@@ -16,7 +18,7 @@ export function Header() {
           Itapetininga, SP
         </span>
 
-        <Link to="/checkout">
+        <Link to="/order">
           <ShoppingCartSimple size={22} weight="fill" />
         </Link>
       </div>

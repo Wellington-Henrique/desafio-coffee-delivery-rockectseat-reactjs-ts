@@ -42,7 +42,9 @@ export function Cart() {
             <span>R$ 9,90</span>
           </div>
 
-          <BigButton.Container>CONFIRMAR PEDIDO</BigButton.Container>
+          <BigButton.Container type="submit">
+            CONFIRMAR PEDIDO
+          </BigButton.Container>
         </CartFooter>
       </CardContentContainer>
     </CartContainer>

@@ -9,4 +9,6 @@ export const FieldsContainer = styled.div`
   gap: 1rem 0;
 
   justify-content: space-between;
+
+  margin-top: 2rem;
 `
