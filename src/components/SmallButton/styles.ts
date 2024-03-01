@@ -1,12 +1,10 @@
 import styled, { css } from 'styled-components'
 
-interface ButtonContainerProps {
+interface SmallButtonContainerProps {
   isSelected: boolean
 }
 
-export const ButtonContainer = styled.button<ButtonContainerProps>`
-  width: 11.166875rem;
-
+export const SmallButtonContainer = styled.button<SmallButtonContainerProps>`
   border-radius: 6px;
 
   ${({ isSelected }) =>
@@ -22,12 +20,12 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
 
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.25rem;
 
   border: 0;
   outline: transparent;
 
-  padding: 1rem;
+  padding: 0.5rem;
 
   span {
     color: ${({ theme }) => theme['base-text']};
@@ -42,6 +40,5 @@ export const ButtonContainer = styled.button<ButtonContainerProps>`
   &:hover {
     background-color: ${({ theme }) => theme['base-hover']};
     cursor: pointer;
-    transition: ease-in-out 0.1s;
   }
 `

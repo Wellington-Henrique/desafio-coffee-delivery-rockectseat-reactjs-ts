@@ -1,6 +1,7 @@
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { ShoppingCart } from 'phosphor-react'
 
 import { ProductCardContainer } from './styles'
+import { AddRemoveProduct } from '../../../../../components/AddRemoveProduct'
 
 interface Categories {
   id: string
@@ -43,17 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <span className="price">{product.price.toFixed(2)}</span>
         </div>
 
-        <span className="add-remove-container">
-          <button>
-            <Minus size={14} />
-          </button>
-
-          <span>1</span>
-
-          <button>
-            <Plus size={14} />
-          </button>
-        </span>
+        <AddRemoveProduct />
 
         <button className="btn-add-to-cart">
           <ShoppingCart weight="fill" />

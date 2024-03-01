@@ -48,6 +48,7 @@ export const defaultTheme = {
 
   'text-m-font-size': '1rem',
   'text-m-font-line-height': '1.3',
+  'text-m-font-weight': '500',
 
   'text-s-font-size': '0.875rem',
   'text-s-font-line-height': '1.3',

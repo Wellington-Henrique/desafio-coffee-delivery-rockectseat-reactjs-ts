@@ -49,7 +49,7 @@ export function FormPaymentMethod() {
           }
         >
           <Button.Icon icon={<Money size={16} />} />
-          <Button.Text>Cartão de crédito</Button.Text>
+          <Button.Text>Dinheiro</Button.Text>
         </Button.Container>
       </FormFieldsContainer>
     </ContentContainer>
