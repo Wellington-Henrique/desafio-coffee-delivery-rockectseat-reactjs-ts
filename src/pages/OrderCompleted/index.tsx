@@ -4,6 +4,8 @@ import illustration from '../../assets/illustration.svg'
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 
 export function OrderCompleted() {
+  document.title = 'A caminho! | Coffee Delivery'
+
   return (
     <OrderCompletedContainer>
       <h2>Uhu! Pedido confirmado</h2>

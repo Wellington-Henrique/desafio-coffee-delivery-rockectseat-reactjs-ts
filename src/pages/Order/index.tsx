@@ -8,6 +8,8 @@ import { FormEvent } from 'react'
 export function Order() {
   const navigate = useNavigate()
 
+  document.title = 'Pedido | Coffee Delivery'
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     navigate('/completed')
