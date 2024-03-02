@@ -34,6 +34,11 @@ export const HeaderContainer = styled.header`
     }
 
     a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
       border: 0;
       background-color: ${({ theme }) => theme['yellow-light']};
       padding: 0.5rem;
@@ -41,6 +46,26 @@ export const HeaderContainer = styled.header`
 
       svg {
         fill: ${({ theme }) => theme['yellow-dark']};
+      }
+
+      &:before {
+        width: 1.25rem;
+        height: 1.25rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+
+        content: attr(cart-count);
+        border-radius: 50%;
+        top: -25%;
+        right: -25%;
+
+        background-color: ${({ theme }) => theme['yellow-dark']};
+        font-size: ${({ theme }) => theme['text-s-font-size']};
+        font-weight: bold;
+        color: ${({ theme }) => theme.white};
       }
     }
   }

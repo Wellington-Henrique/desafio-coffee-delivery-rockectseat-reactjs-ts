@@ -18,7 +18,7 @@ export function Header() {
           Itapetininga, SP
         </span>
 
-        <Link to="/order">
+        <Link to="/order" cart-count="2">
           <ShoppingCartSimple size={22} weight="fill" />
         </Link>
       </div>
