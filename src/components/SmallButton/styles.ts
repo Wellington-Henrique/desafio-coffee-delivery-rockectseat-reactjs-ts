@@ -1,22 +1,7 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-interface SmallButtonContainerProps {
-  isSelected: boolean
-}
-
-export const SmallButtonContainer = styled.button<SmallButtonContainerProps>`
+export const SmallButtonContainer = styled.button`
   border-radius: 6px;
-
-  ${({ isSelected }) =>
-    isSelected
-      ? css`
-          color: ${({ theme }) => theme['purple-dark']};
-          background-color: ${({ theme }) => theme['purple-light']};
-          box-shadow: 0 0 0 1px ${({ theme }) => theme.purple};
-        `
-      : css`
-          background-color: ${({ theme }) => theme['base-button']};
-        `}
 
   display: flex;
   align-items: center;

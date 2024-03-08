@@ -1,7 +1,12 @@
+import { useState } from 'react'
+import { useOrder } from '../../../../../hooks/useOrder'
+import { OrderLine } from '../../../../../contexts/OrderContext'
+
 import { ShoppingCart } from 'phosphor-react'
 
 import { ProductCardContainer } from './styles'
 import { AddRemoveProduct } from '../../../../../components/AddRemoveProduct'
+import { currencyFormatter } from '../../../../../utils/formatters'
 
 interface Categories {
   id: string
@@ -22,6 +27,35 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const [currentProduct, setCurrentProduct] = useState<OrderLine>({
+    productId: product.id,
+    description: product.title,
+    quantity: 1,
+    price: product.price,
+    image: product.image,
+  })
+
+  const { order, addProductToCart, updateProductInCart } = useOrder()
+
+  function handleAddtoCart() {
+    const index = order.orderLines.findIndex(
+      (product) => product.productId === currentProduct.productId,
+    )
+
+    if (index < 0) addProductToCart(currentProduct)
+    else updateProductInCart(currentProduct.productId, currentProduct.quantity)
+
+    setCurrentProduct((prev) => {
+      return { ...prev, quantity: 1 }
+    })
+  }
+
+  function changeQuantity(quantity: number) {
+    setCurrentProduct((prev) => {
+      return { ...prev, quantity: prev.quantity + quantity }
+    })
+  }
+
   return (
     <ProductCardContainer>
       <img src={product.image} alt="" />
@@ -41,12 +75,19 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="card-footer">
         <div className="price-container">
           <span>R$</span>
-          <span className="price">{product.price.toFixed(2)}</span>
+          <span className="price">{currencyFormatter(product.price)}</span>
         </div>
 
-        <AddRemoveProduct />
+        <AddRemoveProduct
+          onChange={changeQuantity}
+          defaultValue={currentProduct.quantity}
+        />
 
-        <button className="btn-add-to-cart">
+        <button
+          className="btn-add-to-cart"
+          type="button"
+          onClick={handleAddtoCart}
+        >
           <ShoppingCart weight="fill" />
         </button>
       </div>

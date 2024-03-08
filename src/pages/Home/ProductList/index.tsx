@@ -12,7 +12,6 @@ export function ProductList() {
       })
 
       const coffeListData = await coffeesResponse.json()
-      console.log(coffeListData)
       setCoffeeList(coffeListData)
     })()
   }, [])

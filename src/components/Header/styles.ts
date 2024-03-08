@@ -48,7 +48,12 @@ export const HeaderContainer = styled.header`
         fill: ${({ theme }) => theme['yellow-dark']};
       }
 
-      &:before {
+      &[cart-count='0']::before {
+        content: '';
+        color: transparent;
+      }
+
+      &:not([cart-count='0'])::before {
         width: 1.25rem;
         height: 1.25rem;
 

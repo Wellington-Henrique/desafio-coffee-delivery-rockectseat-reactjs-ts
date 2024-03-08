@@ -6,11 +6,11 @@ interface SmallButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function SmallButtonRoot(
-  { isSelected = false, children }: SmallButtonRootProps,
+  { type, onClick, children }: SmallButtonRootProps,
   props: SmallButtonRootProps,
 ) {
   return (
-    <SmallButtonContainer isSelected={isSelected} {...props}>
+    <SmallButtonContainer {...props} type={type} onClick={onClick}>
       {children}
     </SmallButtonContainer>
   )

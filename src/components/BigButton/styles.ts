@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-interface BigButtonContainerProps {
-  isSelected: boolean
-}
-
-export const BigButtonContainer = styled.button<BigButtonContainerProps>`
+export const BigButtonContainer = styled.button`
   background-color: ${({ theme }) => theme.yellow};
   border-radius: 6px;
   border: 0;

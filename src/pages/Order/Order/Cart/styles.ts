@@ -39,6 +39,28 @@ export const CartListContainer = styled.div`
     padding-top: 1.5rem;
     border-top: 1px solid ${({ theme }) => theme['base-button']};
   }
+
+  .without-product-msg {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    span,
+    svg {
+      text-align: center;
+
+      font-size: ${({ theme }) => theme['title-l-font-size']};
+      font-weight: ${({ theme }) => theme['title-l-font-weight']};
+
+      opacity: 0.45;
+    }
+  }
 `
 
 export const CardRowContainer = styled.div`

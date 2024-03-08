@@ -1,16 +1,14 @@
 import { ButtonHTMLAttributes } from 'react'
 import { BigButtonContainer } from './styles'
 
-interface BigButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  isSelected?: boolean
-}
+interface BigButtonRootProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export function BigButtonRoot(
-  { isSelected = false, children }: BigButtonRootProps,
+  { onClick, type, children }: BigButtonRootProps,
   props: BigButtonRootProps,
 ) {
   return (
-    <BigButtonContainer isSelected={isSelected} {...props}>
+    <BigButtonContainer {...props} type={type} onClick={onClick}>
       {children}
     </BigButtonContainer>
   )

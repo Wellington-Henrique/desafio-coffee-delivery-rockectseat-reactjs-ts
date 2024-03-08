@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 interface InputProps {
-  variantSize?: '35rem' | '21.75rem' | '17.25rem' | '12.5rem' | '3.75rem'
+  variantSize: '35rem' | '21.75rem' | '17.25rem' | '12.5rem' | '3.75rem'
 }
 
 export const Input = styled.input<InputProps>`
