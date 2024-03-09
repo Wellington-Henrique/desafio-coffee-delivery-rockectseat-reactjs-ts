@@ -19,32 +19,66 @@ export function FormAddress() {
 
       <FormFieldsContainer>
         <Input.Container>
-          <Input.Field variantSize="12.5rem" placeholder="CEP" />
+          <Input.Field
+            name="cep"
+            variantSize="12.5rem"
+            placeholder="CEP"
+            required
+          />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="35rem" placeholder="Rua" />
+          <Input.Field
+            variantSize="35rem"
+            placeholder="Rua"
+            required
+            name="address"
+          />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="12.5rem" placeholder="Número" />
+          <Input.Field
+            variantSize="12.5rem"
+            placeholder="Número"
+            required
+            name="number"
+          />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="21.75rem" placeholder="Complemento" />
+          <Input.Field
+            variantSize="21.75rem"
+            placeholder="Complemento"
+            name="complement"
+          />
           <Input.Optional />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="12.5rem" placeholder="Bairro" />
+          <Input.Field
+            variantSize="12.5rem"
+            placeholder="Bairro"
+            required
+            name="neighborhood"
+          />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="17.25rem" placeholder="Cidade" />
+          <Input.Field
+            variantSize="17.25rem"
+            placeholder="Cidade"
+            required
+            name="city"
+          />
         </Input.Container>
 
         <Input.Container>
-          <Input.Field variantSize="3.75rem" placeholder="UF" />
+          <Input.Field
+            variantSize="3.75rem"
+            placeholder="UF"
+            required
+            name="state"
+          />
         </Input.Container>
       </FormFieldsContainer>
     </ContentContainer>

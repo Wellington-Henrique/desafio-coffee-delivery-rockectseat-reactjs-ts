@@ -1,11 +1,14 @@
-import { Trash } from 'phosphor-react'
-import { AddRemoveProduct } from '../../../../../../components/AddRemoveProduct'
-
-import { CardRowContainer } from '../../styles'
-import { SmallButton } from '../../../../../../components/SmallButton'
+import { useOrder } from '../../../../../../hooks/useOrder'
 import { OrderLine } from '../../../../../../contexts/OrderContext'
 import { currencyFormatter } from '../../../../../../utils/formatters'
-import { useOrder } from '../../../../../../hooks/useOrder'
+
+import { AddRemoveProduct } from '../../../../../../components/AddRemoveProduct'
+import { SmallButton } from '../../../../../../components/SmallButton'
+import { toast } from 'sonner'
+
+import { Trash } from 'phosphor-react'
+
+import { CardRowContainer } from '../../styles'
 
 interface CardRowProps {
   product: OrderLine
@@ -20,6 +23,7 @@ export function CardRow({ product }: CardRowProps) {
 
   function handleDeleteProduct() {
     deleteProductFromCart(product.productId)
+    toast.success('Café removido do carrinho!')
   }
 
   return (

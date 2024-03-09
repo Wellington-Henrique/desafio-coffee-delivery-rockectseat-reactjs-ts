@@ -1,6 +1,7 @@
+import { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-interface InputProps {
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   variantSize: '35rem' | '21.75rem' | '17.25rem' | '12.5rem' | '3.75rem'
 }
 

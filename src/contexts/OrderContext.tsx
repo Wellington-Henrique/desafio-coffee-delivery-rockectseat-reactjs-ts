@@ -10,6 +10,12 @@ export interface OrderLine {
 
 interface Order {
   id: string
+  cep: string
+  address: string
+  number: string
+  city: string
+  state: string
+  paymentType: string
   orderLines: OrderLine[]
 }
 
@@ -29,6 +35,12 @@ interface OrderContextProviderProps {
 export function OrderContextProvider({ children }: OrderContextProviderProps) {
   const [order, setOrder] = useState<Order>({
     id: '1',
+    cep: '',
+    address: '',
+    number: '',
+    city: '',
+    state: '',
+    paymentType: '',
     orderLines: [],
   })
 

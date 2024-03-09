@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Product, ProductCard } from './components/ProductCard'
 import { ProductListContainer, ProductListContent } from './styles'
 
@@ -6,14 +6,19 @@ export function ProductList() {
   const [coffeeList, setCoffeeList] = useState<Product[]>([])
 
   useEffect(() => {
-    ;(async () => {
-      const coffeesResponse = await fetch('http://localhost:3000/coffees', {
-        method: 'GET',
-      })
+    getCoffees()
+  }, [])
 
-      const coffeListData = await coffeesResponse.json()
-      setCoffeeList(coffeListData)
-    })()
+  const getCoffees = useCallback(async () => {
+    const coffeesResponse = await fetch(
+      'https://api-coffee-delivery-json-server.vercel.app/coffees',
+      {
+        method: 'GET',
+      },
+    )
+
+    const coffeListData = await coffeesResponse.json()
+    setCoffeeList(coffeListData)
   }, [])
 
   return (

@@ -4,6 +4,7 @@ import { ContentContainer } from '../../../../styles'
 import { FormTitle } from './FormTitle'
 import { Button } from '../../../../../../components/Button'
 import { FormFieldsContainer } from './FormFieldsContainer'
+import { useFormContext } from 'react-hook-form'
 
 enum PaymentMethodType {
   CREDIT = 'CREDIT',
@@ -12,7 +13,11 @@ enum PaymentMethodType {
 }
 
 export function FormPaymentMethod() {
-  const currentType = 'CREDIT'
+  const { setValue, watch } = useFormContext()
+
+  function handleChange(paymentType: PaymentMethodType) {
+    setValue('paymentType', paymentType)
+  }
 
   return (
     <ContentContainer>
@@ -26,27 +31,36 @@ export function FormPaymentMethod() {
 
       <FormFieldsContainer>
         <Button.Container
+          type="button"
           isSelected={
-            PaymentMethodType.CREDIT === (currentType as PaymentMethodType)
+            PaymentMethodType.CREDIT ===
+            (watch('paymentType') as PaymentMethodType)
           }
+          onClick={() => handleChange(PaymentMethodType.CREDIT)}
         >
           <Button.Icon icon={<CreditCard size={16} />} />
           <Button.Text>Cartão de crédito</Button.Text>
         </Button.Container>
 
         <Button.Container
+          type="button"
           isSelected={
-            PaymentMethodType.DEBIT === (currentType as PaymentMethodType)
+            PaymentMethodType.DEBIT ===
+            (watch('paymentType') as PaymentMethodType)
           }
+          onClick={() => handleChange(PaymentMethodType.DEBIT)}
         >
           <Button.Icon icon={<Bank size={16} />} />
           <Button.Text>Cartão de débito</Button.Text>
         </Button.Container>
 
         <Button.Container
+          type="button"
           isSelected={
-            PaymentMethodType.MONEY === (currentType as PaymentMethodType)
+            PaymentMethodType.MONEY ===
+            (watch('paymentType') as PaymentMethodType)
           }
+          onClick={() => handleChange(PaymentMethodType.MONEY)}
         >
           <Button.Icon icon={<Money size={16} />} />
           <Button.Text>Dinheiro</Button.Text>

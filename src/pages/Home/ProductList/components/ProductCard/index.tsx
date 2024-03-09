@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useOrder } from '../../../../../hooks/useOrder'
 import { OrderLine } from '../../../../../contexts/OrderContext'
+import { currencyFormatter } from '../../../../../utils/formatters'
+
+import { AddRemoveProduct } from '../../../../../components/AddRemoveProduct'
+import { toast } from 'sonner'
 
 import { ShoppingCart } from 'phosphor-react'
 
 import { ProductCardContainer } from './styles'
-import { AddRemoveProduct } from '../../../../../components/AddRemoveProduct'
-import { currencyFormatter } from '../../../../../utils/formatters'
 
 interface Categories {
   id: string
@@ -48,6 +50,8 @@ export function ProductCard({ product }: ProductCardProps) {
     setCurrentProduct((prev) => {
       return { ...prev, quantity: 1 }
     })
+
+    toast.success('Café adicionado ao carrinho!')
   }
 
   function changeQuantity(quantity: number) {
