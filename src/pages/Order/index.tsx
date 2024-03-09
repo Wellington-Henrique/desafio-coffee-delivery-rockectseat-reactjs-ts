@@ -7,6 +7,7 @@ import { Cart } from './Order/Cart'
 import { CheckoutForm } from './Order/CheckoutForm'
 
 import { OrderContainer } from './styles'
+import { useOrder } from '../../hooks/useOrder'
 
 interface Order {
   cep: string
@@ -33,6 +34,8 @@ const checkoutFormSchema = z.object({
 type CheckoutFormInputs = z.infer<typeof checkoutFormSchema>
 
 export function Order() {
+  const { createNewOrder } = useOrder()
+
   const navigate = useNavigate()
   const methods = useForm<CheckoutFormInputs>({
     resolver: zodResolver(checkoutFormSchema),
@@ -48,12 +51,14 @@ export function Order() {
     },
   })
 
-  const { handleSubmit } = methods
+  const { reset, handleSubmit } = methods
 
   document.title = 'Pedido | Coffee Delivery'
 
   async function handleNewOrder(data: Order) {
     console.log(data)
+    await createNewOrder()
+    reset()
     navigate('/completed')
   }
 

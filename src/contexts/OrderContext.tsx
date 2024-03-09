@@ -21,6 +21,7 @@ interface Order {
 
 interface OrderType {
   order: Order
+  createNewOrder: () => Promise<void>
   addProductToCart: (data: OrderLine) => void
   updateProductInCart: (productId: string, quantity: number) => void
   deleteProductFromCart: (productId: string) => void
@@ -32,17 +33,24 @@ interface OrderContextProviderProps {
   children: ReactNode
 }
 
+const inititalStates = {
+  id: '1',
+  cep: '',
+  address: '',
+  number: '',
+  city: '',
+  state: '',
+  paymentType: '',
+  orderLines: [],
+}
+
 export function OrderContextProvider({ children }: OrderContextProviderProps) {
-  const [order, setOrder] = useState<Order>({
-    id: '1',
-    cep: '',
-    address: '',
-    number: '',
-    city: '',
-    state: '',
-    paymentType: '',
-    orderLines: [],
-  })
+  const [order, setOrder] = useState<Order>(inititalStates)
+
+  async function createNewOrder() {
+    console.log('ordem criada com sucesso!')
+    clearCart()
+  }
 
   function addProductToCart(data: OrderLine) {
     const newItem: OrderLine = {
@@ -85,10 +93,15 @@ export function OrderContextProvider({ children }: OrderContextProviderProps) {
     setOrder(newOrder)
   }
 
+  function clearCart() {
+    setOrder(inititalStates)
+  }
+
   return (
     <OrderContext.Provider
       value={{
         order,
+        createNewOrder,
         addProductToCart,
         updateProductInCart,
         deleteProductFromCart,
