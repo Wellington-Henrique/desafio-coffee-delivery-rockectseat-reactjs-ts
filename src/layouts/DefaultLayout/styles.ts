@@ -7,4 +7,9 @@ export const LayoutContainer = styled.main`
   margin: 0 auto;
 
   padding-bottom: 2rem;
+
+  @media (max-width: 922px) {
+    padding: 5px;
+    margin: 0;
+  }
 `

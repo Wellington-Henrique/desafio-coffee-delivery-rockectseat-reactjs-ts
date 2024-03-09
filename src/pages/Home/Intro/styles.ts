@@ -44,6 +44,24 @@ export const IntroContainer = styled.div`
     width: 476px;
     height: 360px;
   }
+
+  @media (max-width: 922px) {
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+
+    .intro-content {
+      display: flex;
+      flex-direction: column;
+
+      width: 100%;
+    }
+
+    .art-1 {
+      max-width: 90%;
+    }
+  }
 `
 
 export const SloganContainer = styled.div`
@@ -89,6 +107,17 @@ export const SloganContainer = styled.div`
 
     .coffee-ico {
       background-color: ${({ theme }) => theme.purple};
+    }
+  }
+
+  @media (max-width: 922px) {
+    display: flex;
+    gap: 0.5rem;
+
+    height: 100%;
+
+    div {
+      width: 100%;
     }
   }
 `

@@ -112,4 +112,9 @@ export const ProductCardContainer = styled.div`
       }
     }
   }
+
+  @media (max-width: 922px) {
+    max-width: 100%;
+    width: 100%;
+  }
 `

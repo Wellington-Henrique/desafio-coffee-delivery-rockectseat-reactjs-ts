@@ -80,4 +80,18 @@ export const OrderCompletedContainer = styled.div`
   .dollar-icon {
     background-color: ${({ theme }) => theme['yellow-dark']};
   }
+
+  @media (max-width: 922px) {
+    width: 100%;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      img {
+        max-width: 90%;
+      }
+    }
+  }
 `

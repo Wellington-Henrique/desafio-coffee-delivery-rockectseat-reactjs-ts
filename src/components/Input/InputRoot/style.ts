@@ -5,4 +5,8 @@ export const RootContainer = styled.div`
   align-items: center;
 
   position: relative;
+
+  @media (max-width: 922px) {
+    width: 100%;
+  }
 `

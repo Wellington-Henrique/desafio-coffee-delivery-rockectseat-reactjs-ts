@@ -4,9 +4,14 @@ export const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  min-height: 31.125rem;
+  min-height: 36.9375rem;
   max-height: 36.9375rem;
   min-width: 28rem;
+
+  @media (max-width: 922px) {
+    min-width: 100%;
+    width: 100%;
+  }
 `
 
 export const CardContentContainer = styled.div`

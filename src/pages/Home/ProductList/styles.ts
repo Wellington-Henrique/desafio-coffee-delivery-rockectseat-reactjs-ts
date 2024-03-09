@@ -8,6 +8,10 @@ export const ProductListContainer = styled.div`
     font-weight: ${({ theme }) => theme['title-l-font-weight']};
     color: ${({ theme }) => theme['base-subtitle']};
   }
+
+  @media (max-width: 922px) {
+    width: 100%;
+  }
 `
 
 export const ProductListContent = styled.div`

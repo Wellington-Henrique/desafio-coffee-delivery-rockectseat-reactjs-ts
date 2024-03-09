@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Product, ProductCard } from './components/ProductCard'
+
 import { ProductListContainer, ProductListContent } from './styles'
 
 export function ProductList() {

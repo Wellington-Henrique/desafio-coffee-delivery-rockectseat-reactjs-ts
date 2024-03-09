@@ -8,11 +8,7 @@ export function DefaultLayout() {
   return (
     <LayoutContainer>
       <Header />
-
-      <div className="content">
-        <Outlet />
-      </div>
-
+      <Outlet />
       <Toaster richColors />
     </LayoutContainer>
   )

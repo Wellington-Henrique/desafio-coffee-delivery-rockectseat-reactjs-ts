@@ -13,9 +13,15 @@ export const OrderContainer = styled.form`
 
     margin-bottom: 0.9375rem;
   }
+
+  @media (max-width: 922px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `
 
 export const CheckoutFormContainer = styled.div`
+  width: 40rem;
   display: flex;
   flex-direction: column;
 
@@ -23,6 +29,19 @@ export const CheckoutFormContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+  }
+
+  @media (max-width: 922px) {
+    width: 100%;
+
+    > div {
+      width: 100%;
+    }
+
+    input,
+    button {
+      width: 100%;
+    }
   }
 `
 
@@ -33,4 +52,8 @@ export const ContentContainer = styled.div`
   padding: 2.5rem;
   background-color: ${({ theme }) => theme['base-card']};
   border-radius: 6px;
+
+  @media (max-width: 922px) {
+    width: 100%;
+  }
 `
